@@ -9,22 +9,16 @@ class SplashView extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-             const Text('Hola Mundo'),
-             const Text('Hola Mundo'),
+             const Text('Frases de la mejor tía'),
             const Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Hola Mundo'),
-                Text('Hola Mundo'),
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children:  [
+                Text('Generar imagenes'),
+                Text('Compartir'),
               ],
             ),
-            SizedBox(
-              child: Container(
-                width: 200,
-                height: 100,
-                decoration: BoxDecoration(color: Colors.grey),
-              ),
-            ),
+            Image.asset('assets/images/piolin.png', width: 100, height: 100),
+            Image.asset('assets/images/piolin_2.png', width: 100, height: 100),
           ],
         ),
       ),
