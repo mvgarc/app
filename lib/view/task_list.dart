@@ -14,7 +14,9 @@ class _TaskListPageState extends State<TaskListPage> {
     return Scaffold(
       body: Center(child: Text('Holis')),
       floatingActionButton: FloatingActionButton(
-        onPressed:(){},
+        onPressed:(){
+          print('Pulsado');
+        },
         child:Icon(Icons.add),),
     );
   }
