@@ -12,9 +12,12 @@ class _TaskListPageState extends State<TaskListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Holis')),
+      body: Center(child: Text('Holis, el contador es $count')),
       floatingActionButton: FloatingActionButton(
         onPressed:(){
+          setState(() {
+            count++;
+          });
           print('Pulsado');
         },
         child:Icon(Icons.add),),
