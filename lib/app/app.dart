@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           displayColor: textColor,
         )
       ),
-      home:TaskListPage(),
+      home:SplashView(),
     );
   }
 }

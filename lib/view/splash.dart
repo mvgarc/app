@@ -25,10 +25,15 @@ class SplashView extends StatelessWidget{
               fontWeight: FontWeight.w600,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32),
-            child: Text('Ten a la mano fotos con mensajes inspiradores, sin necesidad de descargarlas en tu dispositivo.',
-            textAlign: TextAlign.center ,),
+          GestureDetector(
+            onTap:(){
+             print ('Pulsado');
+          },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32),
+              child: Text('Ten a la mano fotos con mensajes inspiradores, sin necesidad de descargarlas en tu dispositivo.',
+              textAlign: TextAlign.center ,),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
