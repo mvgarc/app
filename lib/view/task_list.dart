@@ -13,6 +13,9 @@ class _TaskListPageState extends State<TaskListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(child: Text('Holis')),
+      floatingActionButton: FloatingActionButton(
+        onPressed:(){},
+        child:Icon(Icons.add),),
     );
   }
 }
