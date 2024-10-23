@@ -30,12 +30,12 @@ class SplashView extends StatelessWidget{
             child: Text('Ten a la mano fotos con mensajes inspiradores, sin necesidad de descargarlas en tu dispositivo.',
             textAlign: TextAlign.center ,),
           ),
-          GestureDetector(
-            onTap: (){
-              Navigator.of(context).push;
-            },
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child:GestureDetector(
+              onTap: (){
+                Navigator.of(context).push;
+              },
               child: OutlinedButton(
                 onPressed: () {// Acción
                 },
