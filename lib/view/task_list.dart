@@ -17,6 +17,12 @@ class _TaskListPageState extends State<TaskListPage> {
   }
 
   @override
+  void dispose() {
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(child: Text('Holis, el contador es $count')),
