@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba/view/task_list.dart';
 
 class SplashView extends StatelessWidget{
   const SplashView({super.key});
@@ -25,24 +26,26 @@ class SplashView extends StatelessWidget{
               fontWeight: FontWeight.w600,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 32),
-            child: Text('Ten a la mano fotos con mensajes inspiradores, sin necesidad de descargarlas en tu dispositivo.',
-            textAlign: TextAlign.center ,),
+          GestureDetector(
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                return TaskListPage();
+              }));
+            },
+            child: const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32),
+              child: Text('Ten a la mano fotos con mensajes inspiradores, sin necesidad de descargarlas en tu dispositivo.',
+              textAlign: TextAlign.center ,),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
-            child:GestureDetector(
-              onTap: (){
-                Navigator.of(context).push;
+            child: OutlinedButton(
+              onPressed: () {// Acción
               },
-              child: OutlinedButton(
-                onPressed: () {// Acción
-                },
-                child: const Text(
-                  'Siguiente',
-                  style: TextStyle(fontSize: 15),
-                ),
+              child: const Text(
+                'Siguiente',
+                style: TextStyle(fontSize: 15),
               ),
             ),
           )
