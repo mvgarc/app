@@ -25,6 +25,9 @@ class _TaskListPageState extends State<TaskListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Task List'),
+      ),
       body: Center(child: Text('Holis, el contador es $count')),
       floatingActionButton: FloatingActionButton(
         onPressed:(){
