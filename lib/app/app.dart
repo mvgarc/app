@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     const backgroundColor = Color(0xFFF5F5F5);
     return MaterialApp(
       title: 'Frases de Tía',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: primary),
         scaffoldBackgroundColor: backgroundColor,
