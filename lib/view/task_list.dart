@@ -26,7 +26,7 @@ class _TaskListPageState extends State<TaskListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Task List'),
+        title: Text('Mensajes'),
       ),
       body: Center(child: Text('Holis, el contador es $count')),
       floatingActionButton: FloatingActionButton(
