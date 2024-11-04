@@ -18,12 +18,7 @@ class SplashView extends StatelessWidget{
           const SizedBox(
             height: 10,
           ),
-          Text('Mensajes bonitos para tía',
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
+          Title('Mensajes bonitos para tía'),
           GestureDetector(
             onTap: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context){
