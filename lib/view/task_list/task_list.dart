@@ -9,15 +9,22 @@ class TaskListPage extends StatefulWidget {
 
 class _TaskListPageState extends State<TaskListPage> {
   int count = 0;
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  final TextEditingController _controller = TextEditingController();
+  final List<String> _messages = [];
 
   @override
   void dispose() {
+    _controller.dispose();
     super.dispose();
+  }
+
+  void _addMessage() {
+    setState(() {
+      if (_controller.text.isNotEmpty) {
+        _messages.add(_controller.text);
+        _controller.clear(); // Limpiar el campo después de guardar
+      }
+    });
   }
 
   @override
@@ -32,23 +39,31 @@ class _TaskListPageState extends State<TaskListPage> {
             padding: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
             child: Text('Crea tu mensaje'),
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: TextField(
+              controller: _controller,
+              decoration: InputDecoration(
+                labelText: 'Escribe tu mensaje',
+                border: OutlineInputBorder(),
+              ),
+            ),
+          ),
+          SizedBox(height: 10),
           Expanded(
-            child: ListView(
-              children: const [
-                Text('Item 1'),
-                Text('Item 1'),
-                Text('Item 1'),
-                Text('Item 1'),
-                Text('Item 1'),
-              ],
+            child: ListView.builder(
+              itemCount: _messages.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(_messages[index]),
+                );
+              },
             ),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Acción al presionar el botón
-        },
+        onPressed: _addMessage,
         child: Icon(Icons.add),
       ),
     );
