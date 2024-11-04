@@ -14,7 +14,7 @@ class SplashView extends StatelessWidget{
           const SizedBox(
             height: 220,
           ),
-          Shape(),
+          const Shape(),
           const SizedBox(
             height: 10,
           ),
