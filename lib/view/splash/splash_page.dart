@@ -19,7 +19,7 @@ class SplashView extends StatelessWidget{
           const SizedBox(
             height: 10,
           ),
-          H1 ('Mensajes bonitos para tía'),
+          const H1 ('Mensajes bonitos para tía'),
           GestureDetector(
             onTap: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context){
