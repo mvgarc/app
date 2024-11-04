@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba/view/components/shape.dart';
 import 'package:prueba/view/task_list/task_list.dart';
 
 class SplashView extends StatelessWidget{
@@ -13,10 +14,7 @@ class SplashView extends StatelessWidget{
           const SizedBox(
             height: 220,
           ),
-          Image.asset('assets/images/piolin_1.png',
-            width: 360,
-            height: 200,
-            ),
+          Shape(),
           const SizedBox(
             height: 10,
           ),
