@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prueba/view/components/h1.dart';
 import 'package:prueba/view/components/shape.dart';
 import 'package:prueba/view/task_list/task_list.dart';
 
@@ -18,7 +19,7 @@ class SplashView extends StatelessWidget{
           const SizedBox(
             height: 10,
           ),
-          Title('Mensajes bonitos para tía'),
+          H1 ('Mensajes bonitos para tía'),
           GestureDetector(
             onTap: (){
               Navigator.of(context).push(MaterialPageRoute(builder: (context){
