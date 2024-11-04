@@ -13,6 +13,7 @@ class H1 extends StatelessWidget {
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
           fontSize: 18,
       fontWeight: FontWeight.w600,
+          color: color,
     ),
     );
 }
