@@ -12,13 +12,11 @@ class _TaskListPageState extends State<TaskListPage> {
 
   @override
   void initState() {
-
     super.initState();
   }
 
   @override
   void dispose() {
-
     super.dispose();
   }
 
@@ -28,15 +26,31 @@ class _TaskListPageState extends State<TaskListPage> {
       appBar: AppBar(
         title: Text('Mensajes'),
       ),
-      body: Center(child: Text('Holis, el contador es $count')),
+      body: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
+            child: Text('Crea tu mensaje'),
+          ),
+          Expanded(
+            child: ListView(
+              children: const [
+                Text('Item 1'),
+                Text('Item 1'),
+                Text('Item 1'),
+                Text('Item 1'),
+                Text('Item 1'),
+              ],
+            ),
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
-        onPressed:(){
-          setState(() {
-            count++;
-          });
-          print('Pulsado');
+        onPressed: () {
+          // Acción al presionar el botón
         },
-        child:Icon(Icons.add),),
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
