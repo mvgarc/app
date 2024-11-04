@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prueba/view/task_list.dart';
+import 'package:prueba/view/task_list/task_list.dart';
 
 class SplashView extends StatelessWidget{
   const SplashView({super.key});

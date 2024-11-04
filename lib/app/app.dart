@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:prueba/view/splash.dart';
-import 'package:prueba/view/task_list.dart';
+import 'package:prueba/view/splash/splash_page.dart';
+import 'package:prueba/view/task_list/task_list.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
