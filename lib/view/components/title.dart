@@ -2,13 +2,13 @@
 import 'package:flutter/material.dart';
 
 class Title extends StatelessWidget {
-  const Title(this.txt,{super.key});
+  const Title(this.text,{super.key});
 
-  final String txt;
+  final String text;
 
   @override
   Widget build(BuildContext context) =>
-      Text(txt,
+      Text(text,
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
           fontSize: 18,
       fontWeight: FontWeight.w600,
