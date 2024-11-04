@@ -6,5 +6,3 @@ class Shape extends StatelessWidget {
     return const Placeholder();
   }
 }
-
-st
