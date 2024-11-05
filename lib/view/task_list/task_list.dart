@@ -16,6 +16,7 @@ class _TaskListPageState extends State<TaskListPage> {
     'https://i.pinimg.com/564x/ed/00/f2/ed00f23259c3e4f8acee84e67106bc56.jpg',
     'https://i.pinimg.com/564x/ed/00/f2/ed00f23259c3e4f8acee84e67106bc56.jpg',
     'https://i.pinimg.com/564x/ed/00/f2/ed00f23259c3e4f8acee84e67106bc56.jpg',
+
     // Agrega más URLs o usa imágenes locales
   ];
   List<String> _filteredImages = [];
