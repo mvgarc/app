@@ -13,7 +13,14 @@ class _TaskListPageState extends State<TaskListPage> {
     'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
     'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
     'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
-
+    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
+    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
+    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
+    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
+    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
+    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
+    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
+    // Agrega más URLs o usa imágenes locales
   ];
   List<String> _filteredImages = [];
 
@@ -52,7 +59,7 @@ class _TaskListPageState extends State<TaskListPage> {
             child: TextField(
               controller: _searchController,
               onChanged: _filterImages,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 labelText: 'Buscar imagen',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.search),
@@ -62,15 +69,24 @@ class _TaskListPageState extends State<TaskListPage> {
           Expanded(
             child: GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3, // Número de columnas en la galería
-                crossAxisSpacing: 4.0,
-                mainAxisSpacing: 4.0,
+                crossAxisCount: 2, // Número de columnas en la galería
+                crossAxisSpacing: 8.0,
+                mainAxisSpacing: 8.0,
               ),
               itemCount: _filteredImages.length,
               itemBuilder: (context, index) {
-                return Image.network(
-                  _filteredImages[index],
-                  fit: BoxFit.cover,
+                return Card(
+                  elevation: 4.0, // Sombra para la tarjeta
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12.0),
+                    child: Image.network(
+                      _filteredImages[index],
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 );
               },
             ),
