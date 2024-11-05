@@ -10,9 +10,9 @@ class TaskListPage extends StatefulWidget {
 class _TaskListPageState extends State<TaskListPage> {
   final TextEditingController _searchController = TextEditingController();
   final List<String> _allImages = [
-    'https://i.pinimg.com/564x/ed/00/f2/ed00f23259c3e4f8acee84e67106bc56.jpg',
-    'https://i.pinimg.com/564x/ed/00/f2/ed00f23259c3e4f8acee84e67106bc56.jpg',
-    'https://i.pinimg.com/564x/ed/00/f2/ed00f23259c3e4f8acee84e67106bc56.jpg',
+    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
+    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
+    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
 
   ];
   List<String> _filteredImages = [];
@@ -52,7 +52,7 @@ class _TaskListPageState extends State<TaskListPage> {
             child: TextField(
               controller: _searchController,
               onChanged: _filterImages,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Buscar imagen',
                 border: OutlineInputBorder(),
                 prefixIcon: Icon(Icons.search),
