@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class TaskListPage extends StatefulWidget {
   const TaskListPage({super.key});
@@ -9,22 +11,33 @@ class TaskListPage extends StatefulWidget {
 
 class _TaskListPageState extends State<TaskListPage> {
   final TextEditingController _searchController = TextEditingController();
-  final List<String> _allImages = [
-    'https://www.kissfm.es/wp-content/uploads/2022/03/piolin-2000x838.jpg',
-    'https://i.pinimg.com/474x/52/40/7b/52407b651f189e08e699dfcffe41105e.jpg',
-    'https://i.pinimg.com/564x/ed/00/f2/ed00f23259c3e4f8acee84e67106bc56.jpg',
-    'https://i.pinimg.com/564x/ed/00/f2/ed00f23259c3e4f8acee84e67106bc56.jpg',
-    'https://i.pinimg.com/564x/ed/00/f2/ed00f23259c3e4f8acee84e67106bc56.jpg',
-    'https://i.pinimg.com/564x/ed/00/f2/ed00f23259c3e4f8acee84e67106bc56.jpg',
-
-    // Agrega más URLs o usa imágenes locales
-  ];
+  List<String> _allImages = [];
   List<String> _filteredImages = [];
 
   @override
   void initState() {
     super.initState();
-    _filteredImages = List.from(_allImages); // Mostrar todas las imágenes inicialmente
+    _fetchImages();
+  }
+
+  Future<void> _fetchImages() async {
+    try {
+      final response = await http.get(Uri.parse('https://randomuser.me/api/?results=30'));
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        List<String> imageUrls = data['results'].map<String>((user) => user['picture']['large']).toList();
+
+        setState(() {
+          _allImages = imageUrls;
+          _filteredImages = List.from(_allImages);
+        });
+      } else {
+        // Manejar el error si la solicitud no es exitosa
+        throw Exception('Failed to load images');
+      }
+    } catch (e) {
+      print('Error: $e');
+    }
   }
 
   void _filterImages(String query) {
@@ -64,7 +77,9 @@ class _TaskListPageState extends State<TaskListPage> {
             ),
           ),
           Expanded(
-            child: GridView.builder(
+            child: _filteredImages.isEmpty
+                ? Center(child: CircularProgressIndicator())
+                : GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3, // Número de columnas en la galería
                 crossAxisSpacing: 4.0,
